@@ -5,7 +5,8 @@
         {{--<span>
             User System
         </span>--}}
-        <img src="{{ URL::to('/') }}/assets/img/logo22.png" alt="bZm Graphics" class="bgm_logo_img">
+        {{--<img src="{{ URL::to('/') }}/assets/img/logo22.png" alt="bZm Graphics" class="bgm_logo_img">--}}
+        <h5>Administrator Panel</h5>
     </div>
     <nav role="navigation">
         <div class="header-link hide-menu"><i class="fa fa-bars"></i></div>

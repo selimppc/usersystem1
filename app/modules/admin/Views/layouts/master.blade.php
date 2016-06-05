@@ -7,10 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- Page title -->
-    <title> {{isset($pageTitle)?$pageTitle:'User System'}} </title>
+    <title> {{isset($pageTitle)?$pageTitle:'User System'}}</title>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <link rel="shortcut icon" type="image/ico" href="{{ URL::to('/') }}/assets/img/favicon.ico" />
-    {{--<link rel="shortcut icon" href="{{ asset('favicon.ico') }}">--}}
+    {{--<link rel="shortcut icon" type="image/ico" href="{{ URL::to('/') }}/assets/img/favicon.ico" />--}}
 
     <!-- Vendor styles -->
 
