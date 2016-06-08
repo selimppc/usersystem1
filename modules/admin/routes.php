@@ -7,6 +7,7 @@
  */
 
 Route::group(array('middleware' => 'auth','modules'=>'Admin', 'namespace' => 'Modules\Admin\Controllers'), function() {
+
     //Your routes belong to this module.
 /*Form Components*/
 

@@ -89,7 +89,7 @@
             </div>
             <div class="modal-body">
                 {!! Form::open(['route' => 'add-user','id' => 'form_2']) !!}
-                @include('user::user._form')
+                @include('admin::user._form')
                 {!! Form::close() !!}
             </div> <!-- / .modal-body -->
         </div> <!-- / .modal-content -->

@@ -81,7 +81,7 @@
             </div>
             <div class="modal-body">
                 {!! Form::open(['route' => 'store-role','class' => 'form-horizontal','id' => 'form_2']) !!}
-                @include('user::role._form')
+                @include('admin::role._form')
                 {!! Form::close() !!}
             </div> <!-- / .modal-body -->
         </div> <!-- / .modal-content -->

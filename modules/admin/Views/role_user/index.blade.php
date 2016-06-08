@@ -84,7 +84,7 @@
             </div>
             <div class="modal-body">
                 {!! Form::open(['route' => 'store-role-user','id' => 'form_2']) !!}
-                @include('user::role_user._form')
+                @include('admin::role_user._form')
                 {!! Form::close() !!}
             </div> <!-- / .modal-body -->
         </div> <!-- / .modal-content -->

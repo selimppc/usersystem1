@@ -244,7 +244,7 @@ class UserController extends Controller
         $add_days = +$i.' days';
         $days= date('Y/m/d H:i:s', strtotime($add_days, strtotime(date('Y/m/d H:i:s'))));
 
-        return view('user::user.index', ['model' => $model, 'pageTitle'=> $pageTitle,'role'=>$role,'days'=>$days,'department_data'=>$department_data]);
+        return view('admin::user.index', ['model' => $model, 'pageTitle'=> $pageTitle,'role'=>$role,'days'=>$days,'department_data'=>$department_data]);
     }
     /*public function getRoutes(){
         \Artisan::call('route:list');
