@@ -78,7 +78,7 @@
             </div>
             <div class="modal-body">
                 {!! Form::open(['route' => 'add-department','id' => 'jq-validation-form']) !!}
-                @include('user::department._form')
+                @include('admin::department._form')
                 {!! Form::close() !!}
             </div> <!-- / .modal-body -->
         </div> <!-- / .modal-content -->

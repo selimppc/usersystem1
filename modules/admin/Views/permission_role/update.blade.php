@@ -9,7 +9,7 @@
 <div class="modal-body">
     @section('content_update')
     {!! Form::model($data, ['method' => 'PATCH', 'route'=> ['update-permission-role', $data->id]]) !!}
-    @include('user::permission_role._form')
+    @include('admin::permission_role._form')
     {!! Form::close() !!}
 </div>
 

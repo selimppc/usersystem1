@@ -1,4 +1,4 @@
-@extends('user::layouts.signup')
+@extends('admin::layouts.signup')
 
 @section('content')
 

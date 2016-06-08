@@ -8,7 +8,7 @@
 
 <div class="modal-body">
     {!! Form::model($model, ['method' => 'PATCH', 'route'=> ['update-profile-image',$user_image_id],'files'=>'true']) !!}
-    @include('user::user_info.profile_image.add_image')
+    @include('admin::user_info.profile_image.add_image')
     {!! Form::close() !!}
 </div>
 

@@ -97,7 +97,7 @@
                 </div>
                 <div class="modal-body">
                     {!! Form::open(['route' => 'store-user-profile','id' => 'form_2','files'=>'true']) !!}
-                    @include('user::user_info.profile._form')
+                    @include('admin::user_info.profile._form')
                     {!! Form::close() !!}
                 </div> <!-- / .modal-body -->
             </div> <!-- / .modal-content -->
@@ -114,7 +114,7 @@
                 </div>
                 <div class="modal-body">
                     {!! Form::open(['route' => 'update-password','id' => 'change-pss']) !!}
-                              @include('user::change_password._password_form')
+                              @include('admin::change_password._password_form')
                     {!! Form::close() !!}
                 </div> <!-- / .modal-body -->
             </div> <!-- / .modal-content -->
@@ -133,7 +133,7 @@
                 <div class="modal-body">
                     {!! Form::open(['route' => 'store-profile-image','id' => 'form_2','files'=>'true']) !!}
                          {!! Form::hidden('user_id',isset($user_id)?$user_id:'') !!}
-                         @include('user::user_info.profile_image.add_image')
+                         @include('admin::user_info.profile_image.add_image')
                     {!! Form::close() !!}
                 </div> <!-- / .modal-body -->
             </div> <!-- / .modal-content -->
