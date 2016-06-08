@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="text-center m-b-md">
-                <h3>FORGOT PASSWORD--</h3>
+                <h3>FORGOT PASSWORD</h3>
             </div>
             <div class="hpanel">
                 <div class="panel-body">
