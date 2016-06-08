@@ -133,7 +133,7 @@ class AuthController extends Controller
             return view('admin::layouts.dashboard');
         }
         else{
-            return view('user::signin._form');
+            return view('admin::signin._form');
         }
     }
 
