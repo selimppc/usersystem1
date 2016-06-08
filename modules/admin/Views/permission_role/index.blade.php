@@ -89,7 +89,7 @@
             </div>
             <div class="modal-body">
                 {!! Form::open(['route' => 'store-permission-role','id' => 'form_2']) !!}
-                @include('user::permission_role._form')
+                @include('admin::permission_role._form')
                 {!! Form::close() !!}
             </div> <!-- / .modal-body -->
         </div> <!-- / .modal-content -->

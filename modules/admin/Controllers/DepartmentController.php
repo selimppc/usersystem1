@@ -77,21 +77,21 @@ class DepartmentController extends Controller
             $model = Department::paginate(30);
         }
 
-        return view('user::department.index', ['model' => $model, 'pageTitle'=> $pageTitle]);
+        return view('admin::department.index', ['model' => $model, 'pageTitle'=> $pageTitle]);
     }
 
     public function view($id)
     {
         $pageTitle = 'Department Informations';
         $data = Department::where('id',$id)->first();
-        return view('user::department.view', ['data' => $data, 'pageTitle'=> $pageTitle]);
+        return view('admin::department.view', ['data' => $data, 'pageTitle'=> $pageTitle]);
     }
 
     public function edit($id)
     {
         $pageTitle = "Update Department Informations";
         $data = Department::where('id',$id)->first();
-        return view('user::department.update', ['data' => $data,'pageTitle'=> $pageTitle]);
+        return view('admin::department.update', ['data' => $data,'pageTitle'=> $pageTitle]);
     }
 
     public function update(DepartmentRequest $request,$id)
