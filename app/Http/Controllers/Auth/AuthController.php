@@ -148,6 +148,7 @@ class AuthController extends Controller
             return redirect()->route('dashboard');
         }else{
             $field = filter_var($data['email'], FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+
             $user_data_exists = User::where($field, $data['email'])->exists();
 
             if($user_data_exists){
