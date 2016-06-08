@@ -149,7 +149,7 @@ return [
 
         //Modularize
 //        App\Modules\ServiceProvider::class,
-        App\Modules\ServiceProvider::class,
+        Modules\ServiceProvider::class,
 
     ],
 
