@@ -1,4 +1,4 @@
-@extends('user::layouts.login')
+@extends('admin::layouts.login')
 
 @section('content')
     <div class="row">
@@ -13,7 +13,7 @@
                         <label class="control-label" for="username">Email Address</label>
                         {!! Form::email('email', null, ['class' => 'form-control','required','placeholder'=>'E-mail','title'=>'Enter Email Address']) !!}
                     </div>
-    <br>
+                    <br>
                     <button class="btn btn-success btn-block">Reset Password</button>
 
                     {!! Form::close() !!}

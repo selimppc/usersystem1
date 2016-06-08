@@ -89,8 +89,7 @@ class AuthController extends Controller
 
     /*password reset before login by inactive user*/
     public function reset_password($user_id){
-
-        return view('user::reset_password._form',['user_id'=>$user_id]);
+        return view('admin::reset_password._form',['user_id'=>$user_id]);
     }
 
     public function update_new_password(Request $request){

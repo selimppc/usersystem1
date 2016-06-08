@@ -6,6 +6,16 @@
  * Time: 3:59 PM
  */
 
+//------------- Without Authentication [ No Middleware ] ---------------//
+Route::group(array('modules'=>'Admin', 'namespace' => 'Modules\Admin\Controllers'), function() {
+    Route::any('forget-password-view', [
+        'as' => 'forget-password-view',
+        'uses' => 'UserController@forget_password_view'
+    ]);
+});
+
+
+//-------------- With Authentication [ Through Middleware ] ------------------//
 Route::group(array('middleware' => 'auth','modules'=>'Admin', 'namespace' => 'Modules\Admin\Controllers'), function() {
 
     //Your routes belong to this module.
@@ -215,11 +225,7 @@ Route::any('homer', [
         'uses' => 'UserController@create_sign_up'
     ]);*/
 
-    Route::any('forget-password-view', [
-//    'middleware' => 'acl_access:forget-password-view',
-        'as' => 'forget-password-view',
-        'uses' => 'UserController@forget_password_view'
-    ]);
+
 
     Route::any('forget-password', [
 //    'middleware' => 'acl_access:forget-password-view',
