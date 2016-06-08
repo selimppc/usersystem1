@@ -77,6 +77,7 @@ class UserController extends Controller
     }
     public function forget_password_view()
     {
+        //exit('exit');
         return view('admin::forget_password._form');
     }
     public function forget_password()

@@ -1,10 +1,10 @@
-@extends('user::layouts.login')
+@extends('admin::layouts.login')
 
 @section('content')
     <div class="row">
         <div class="col-md-12">
             <div class="text-center m-b-md">
-                <h3>FORGOT PASSWORD</h3>
+                <h3>FORGOT PASSWORD--</h3>
             </div>
             <div class="hpanel">
                 <div class="panel-body">
@@ -13,7 +13,7 @@
                         <label class="control-label" for="username">Email Address</label>
                         {!! Form::email('email', null, ['class' => 'form-control','required','placeholder'=>'E-mail','title'=>'Enter Email Address']) !!}
                     </div>
-    <br>
+                    <br>
                     <button class="btn btn-success btn-block">Reset Password</button>
 
                     {!! Form::close() !!}
