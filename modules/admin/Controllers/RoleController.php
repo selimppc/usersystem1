@@ -24,7 +24,9 @@ class RoleController extends Controller
         $role_title = Input::get('title');
         $pageTitle = "List of Role Informations";
         $data = Role::where('status','!=','cancel')->where('title', 'LIKE', '%'.$role_title.'%')->paginate(30);
+        //print_r($data);exit;
         return view('admin::role.index',['data'=>$data, 'pageTitle'=>$pageTitle]);
+
     }
 
 

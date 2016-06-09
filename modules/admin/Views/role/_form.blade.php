@@ -3,6 +3,7 @@
     <div class="row">
         <div class="col-sm-12">
             {!! Form::label('title', 'Title:', ['class' => 'control-label']) !!}
+            <small class="required">(Required)</small>
             {!! Form::text('title',Input::old('title'),['class' => 'form-control','placeholder'=>'Role Name','required','autofocus', 'title'=>'Enter Role Name']) !!}
         </div>
     </div>
