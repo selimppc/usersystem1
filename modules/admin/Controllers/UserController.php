@@ -29,6 +29,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Session;
 use Auth;
+use DateTime;
 
 class UserController extends Controller
 {
@@ -296,6 +297,7 @@ class UserController extends Controller
         $input = $request->all();
         #print_r($input);exit;
         date_default_timezone_set("Asia/Dacca");
+        $now = new DateTime();
         /* Transaction Start Here */
         DB::beginTransaction();
         try {
@@ -305,6 +307,7 @@ class UserController extends Controller
                 'password'=>Hash::make($input['password']),
                 'csrf_token'=> str_random(30),
                 'ip_address'=> getHostByName(getHostName()),
+                'last_visit'=> $now,
                 'department_id'=> $input['department_id'],
                 'role_id'=> $input['role_id'],
                 'expire_date'=> $input['expire_date'],
@@ -381,12 +384,16 @@ class UserController extends Controller
             }else{
                 $password =  $input['password'];
             }
+
+            $now = new DateTime();
+
             $input_data = [
                 'username'=>$input['username'],
                 'email'=>$input['email'],
                 'password'=>$password,
                 'csrf_token'=> str_random(30),
                 'ip_address'=> getHostByName(getHostName()),
+                'last_visit'=> $now,
                 'department_id'=> $input['department_id'],
                 'role_id'=> $input['role_id'],
                 'expire_date'=> $input['expire_date'],

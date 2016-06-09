@@ -5,10 +5,12 @@
     <div class="row">
         <div class="col-sm-6 form-group">
             {!! Form::label('username', 'UserName:', ['class' => 'control-label']) !!}
+            <small class="required">(Required)</small>
             {!! Form::text('username',Input::old('username'),['id'=>'name','class' => 'form-control','placeholder'=>'User Name','required','autofocus', 'title'=>'Enter User Name']) !!}
         </div>
         <div class="col-sm-6">
             {!! Form::label('email', 'Email Address:', ['class' => 'control-label']) !!}
+            <small class="required">(Required)</small>
             {!! Form::email('email',Input::old('email'),['class' => 'form-control','placeholder'=>'Email Address','required', 'title'=>'Enter User Email Address']) !!}
         </div>
     </div>
@@ -18,10 +20,12 @@
     <div class="row">
         <div class="col-sm-6">
             {!! Form::label('password', 'Password:', ['class' => 'control-label']) !!}
+            <small class="required">(Required)</small>
             {!! Form::password('password',['id'=>'user-password','class' => 'form-control','required','placeholder'=>'Password','title'=>'Enter User Password']) !!}
         </div>
         <div class="col-sm-6">
             {!! Form::label('confirm_password', 'Confirm Password') !!}
+            <small class="required">(Required)</small>
             {!! Form::password('re_password', ['class' => 'form-control','placeholder'=>'Re-Enter New Password','required','id'=>'re-password','name'=>'re_password','onkeyup'=>"validation()",'title'=>'Enter Confirm Password That Must Be Match With New Passowrd.']) !!}
             <span id='show-message'></span>
 
@@ -32,11 +36,13 @@
     <div class="row">
         <div class="col-sm-6">
             {!! Form::label('role_id', 'User Role:', ['class' => 'control-label']) !!}
+            <small class="required">(Required)</small>
             {!! Form::Select('role_id',$role, Input::old('role_id'),['style'=>'text-transform:capitalize','class' => 'form-control','required','title'=>'select role name']) !!}
         </div>
 
         <div class="col-sm-6">
             {!! Form::label('department_id', 'Department:', ['class' => 'control-label']) !!}
+            <small class="required">(Required)</small>
             @if(isset($data->department_id))
                 {!! Form::text('department_title',isset($data->relDepartment->title)?$data->relDepartment->title:'' ,['class' => 'form-control','required','title'=>'select department name','readonly']) !!}
                 {!! Form::hidden('department_id', $data->relDepartment->id) !!}
