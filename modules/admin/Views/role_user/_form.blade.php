@@ -4,6 +4,7 @@
     <div class="row">
         <div class="form-group">
             {!! Form::label('user_id', 'User :', ['class' => 'control-label']) !!}
+            <small class="required">(Required)</small>
             @if(count($user_id)>0)
                 {!! Form::select('user_id', $user_id,Input::old('user_id'),['class' => 'form-control', 'style'=>'text-transform:capitalize','required','title'=>'select  user','autofocus']) !!}
             @else
@@ -12,6 +13,7 @@
         </div>
         <div class="form-group">
             {!! Form::label('role_id', 'Role :', ['class' => 'control-label']) !!}
+            <small class="required">(Required)</small>
             @if(count($role_id)>0)
                 {!! Form::select('role_id', $role_id,Input::old('role_id'),['class' => 'form-control', 'style'=>'text-transform:capitalize','required','title'=>'select  role']) !!}
             @else
