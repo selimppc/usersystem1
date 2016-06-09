@@ -18,6 +18,8 @@ class LogFileHelper
         if ( !file_exists($destinationPath) ) {
             $oldmask = umask(0);  // helpful when used in linux server
             mkdir ($destinationPath, 0777); // create a directory and make permission 777
+        }else{
+            chmod($destinationPath, 0777);
         }
 
         //$log->pushHandler(new Monolog\Handler\StreamHandler(app_path().'/modules/user/logs/'.$file_name.'-'.date('Y-m-d').'.log'),0777);

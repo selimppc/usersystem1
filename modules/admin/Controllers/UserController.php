@@ -533,15 +533,19 @@ class UserController extends Controller
             if ( !file_exists($uploadfolder) ) {
                 $oldmask = umask(0);  // helpful when used in linux server
                 mkdir ($uploadfolder, 0777);
+            }else{
+                chmod($uploadfolder, 0777);
             }
 
             if ( !file_exists($destinationPath) ) {
                 $oldmask = umask(0);  // helpful when used in linux server
                 mkdir ($destinationPath, 0777);
+            }else{
+                chmod($destinationPath, 0777);
             }
 
             $file_name = UserController::image_upload($image,$file_type_required,$destinationPath);
-            print_r($file_name);exit;
+
             if($file_name != '') {
 //                unlink($model->image);
 //                unlink($model->thumbnail);
@@ -614,11 +618,15 @@ class UserController extends Controller
             if ( !file_exists($uploadfolder) ) {
                 $oldmask = umask(0);  // helpful when used in linux server
                 mkdir ($uploadfolder, 0777);
+            }else{
+                chmod($uploadfolder, 0777);
             }
 
             if ( !file_exists($destinationPath) ) {
                 $oldmask = umask(0);  // helpful when used in linux server
                 mkdir ($destinationPath, 0777);
+            }else{
+                chmod($destinationPath, 0777);
             }
 
             $file_name = UserController::image_upload($image,$file_type_required,$destinationPath);
@@ -663,6 +671,8 @@ class UserController extends Controller
 
         $input = $request->all();
 
+
+
         $image_model = new UserImage();
         $image = Input::file('image');
 
@@ -676,16 +686,22 @@ class UserController extends Controller
             if ( !file_exists($uploadfolder) ) {
                 $oldmask = umask(0);  // helpful when used in linux server
                 mkdir ($uploadfolder, 0777);
+            }else{
+                chmod($uploadfolder, 0777);
             }
 
             if ( !file_exists($destinationPath) ) {
                 $oldmask = umask(0);  // helpful when used in linux server
                 mkdir ($destinationPath, 0777);
+            }else{
+                chmod($destinationPath, 0777);
             }
 
 
 
             $file_name = UserController::image_upload($image,$file_type_required,$destinationPath);
+
+            //print_r($file_name);exit;
 
             if($file_name != '') {
 //                unlink($model->image);
@@ -738,11 +754,15 @@ class UserController extends Controller
             if ( !file_exists($uploadfolder) ) {
                 $oldmask = umask(0);  // helpful when used in linux server
                 mkdir ($uploadfolder, 0777);
+            }else{
+                chmod($uploadfolder, 0777);
             }
 
             if ( !file_exists($destinationPath) ) {
                 $oldmask = umask(0);  // helpful when used in linux server
                 mkdir ($destinationPath, 0777);
+            }else{
+                chmod($destinationPath, 0777);
             }
 
             $file_name = UserController::image_upload($image,$file_type_required,$destinationPath);
@@ -792,6 +812,8 @@ class UserController extends Controller
                 if ( !file_exists($destinationPath) ) {
                     $oldmask = umask(0);  // helpful when used in linux server
                     mkdir ($destinationPath, 0777);
+                }else{
+                    chmod($destinationPath, 0777);
                 }
 
                 $file_original_name = $image->getClientOriginalName();
@@ -846,6 +868,8 @@ class UserController extends Controller
                 if ( !file_exists($destinationPath) ) {
                     $oldmask = umask(0);  // helpful when used in linux server
                     mkdir ($destinationPath, 0777);
+                }else{
+                    chmod($destinationPath, 0777);
                 }
 
                 $file_original_name = $image->getClientOriginalName();
@@ -930,7 +954,7 @@ class UserController extends Controller
             $originalFile=$image;
 
             $resizedImages 	= ImageResize::resize($newWidth, $targetFile,$originalFile);
-            print_r($resizedImages);exit;
+            //print_r($resizedImages);exit;
             $thumb_image_destination=$destinationPath;
             $thumb_image_name=$thumb_name;
 
