@@ -19,7 +19,7 @@ class UserRole extends Migration
             $table->increments('id');
             $table->string('title', 64)->nullable();
             $table->string('slug',64)->nullable();
-            $table->enum('status',array('active','inactive'))->nullable();
+            $table->enum('status',array('active','inactive','cancel'))->nullable();
             $table->integer('created_by', false, 11);
             $table->integer('updated_by', false, 11);
             $table->timestamps();
@@ -51,14 +51,12 @@ class UserRole extends Migration
             $table->string('access_token', 256)->nullable();
             $table->string('csrf_token', 64)->nullable();
             $table->string('ip_address', 32)->nullable();
-
-            $table->unsignedInteger('role_id')->nullable();
-            $table->unsignedInteger('department_id')->nullable();
-
+            $table->unsignedInteger('branch_id')->nullable();
             $table->dateTime('last_visit')->nullable();
-
             $table->dateTime('expire_date')->nullable();
             $table->string('remember_token',64)->nullable();
+            $table->unsignedInteger('role_id')->nullable();
+            $table->unsignedInteger('department_id')->nullable();
             $table->enum('status',array('active','inactive','cancel'))->nullable();
             $table->integer('created_by', false, 11);
             $table->integer('updated_by', false, 11);
@@ -82,7 +80,7 @@ class UserRole extends Migration
             $table->unsignedInteger('role_id')->nullable();
             $table->unsignedInteger('user_id')->nullable();
             $table->string('remember_token',64)->nullable();
-            $table->enum('status',array('active','inactive'))->nullable();
+            $table->enum('status',array('active','inactive','cancel'))->nullable();
             $table->integer('created_by', false, 11);
             $table->integer('updated_by', false, 11);
             $table->timestamps();
