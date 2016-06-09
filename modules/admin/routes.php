@@ -251,7 +251,6 @@ Route::any('homer', [
     ]);
 
     Route::get('user-logout', [
-        'middleware' => 'acl_access:user-logout',
         'as' => 'user-logout',
         'uses' => 'UserController@logout'
     ]);

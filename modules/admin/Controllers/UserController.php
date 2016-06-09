@@ -541,7 +541,7 @@ class UserController extends Controller
             }
 
             $file_name = UserController::image_upload($image,$file_type_required,$destinationPath);
-            #print_r($file_name);exit;
+            print_r($file_name);exit;
             if($file_name != '') {
 //                unlink($model->image);
 //                unlink($model->thumbnail);
@@ -672,6 +672,7 @@ class UserController extends Controller
 
             $uploadfolder = 'uploads/';
 
+
             if ( !file_exists($uploadfolder) ) {
                 $oldmask = umask(0);  // helpful when used in linux server
                 mkdir ($uploadfolder, 0777);
@@ -682,8 +683,10 @@ class UserController extends Controller
                 mkdir ($destinationPath, 0777);
             }
 
+
+
             $file_name = UserController::image_upload($image,$file_type_required,$destinationPath);
-            #print_r($file_name);exit;
+
             if($file_name != '') {
 //                unlink($model->image);
 //                unlink($model->thumbnail);
@@ -927,7 +930,7 @@ class UserController extends Controller
             $originalFile=$image;
 
             $resizedImages 	= ImageResize::resize($newWidth, $targetFile,$originalFile);
-
+            print_r($resizedImages);exit;
             $thumb_image_destination=$destinationPath;
             $thumb_image_name=$thumb_name;
 
@@ -943,6 +946,10 @@ class UserController extends Controller
                 }
                 $image_original_name = $image->getClientOriginalName();
                 $image_name = rand(11111, 99999) . $image_original_name;
+
+
+
+
                 $upload_success = $image->move($destinationPath, $image_name);
 
                 $file=array($destinationPath . $image_name, $thumb_image_destination.$thumb_image_name);

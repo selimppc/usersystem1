@@ -54,6 +54,7 @@ class ImageResize
             unlink($targetFile);
         }
         #$image_save_func($tmp, "$targetFile.$new_image_ext"); // using extension as well as case
+
         $image_save_func($tmp, "$targetFile");
 
         return true;
