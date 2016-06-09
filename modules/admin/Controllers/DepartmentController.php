@@ -30,7 +30,7 @@ class DepartmentController extends Controller
         $pageTitle = "List of Departments";
         $model = Department::orderBy('id', 'DESC')->paginate(30);
 
-        return view('user::department.index',['pageTitle'=>$pageTitle,'model'=>$model]);
+        return view('admin::department.index',['pageTitle'=>$pageTitle,'model'=>$model]);
     }
 
     public function store(DepartmentRequest $request){

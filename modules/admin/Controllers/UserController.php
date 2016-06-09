@@ -530,19 +530,21 @@ class UserController extends Controller
 
             $uploadfolder = 'uploads/';
 
+            //print_r(base_path('public').'/'.$uploadfolder);exit;//public_html
+
             if ( !file_exists($uploadfolder) ) {
                 $oldmask = umask(0);  // helpful when used in linux server
                 mkdir ($uploadfolder, 0777);
-            }else{
-                chmod($uploadfolder, 0777);
-            }
+            }/*else{
+                chmod(base_path('public').'/'.$uploadfolder, 0777);
+            }*/
 
             if ( !file_exists($destinationPath) ) {
                 $oldmask = umask(0);  // helpful when used in linux server
                 mkdir ($destinationPath, 0777);
-            }else{
-                chmod($destinationPath, 0777);
-            }
+            }/*else{
+                chmod(base_path('public').'/'.$uploadfolder, 0777);
+            }*/
 
             $file_name = UserController::image_upload($image,$file_type_required,$destinationPath);
 
@@ -618,15 +620,11 @@ class UserController extends Controller
             if ( !file_exists($uploadfolder) ) {
                 $oldmask = umask(0);  // helpful when used in linux server
                 mkdir ($uploadfolder, 0777);
-            }else{
-                chmod($uploadfolder, 0777);
             }
 
             if ( !file_exists($destinationPath) ) {
                 $oldmask = umask(0);  // helpful when used in linux server
                 mkdir ($destinationPath, 0777);
-            }else{
-                chmod($destinationPath, 0777);
             }
 
             $file_name = UserController::image_upload($image,$file_type_required,$destinationPath);
@@ -686,15 +684,11 @@ class UserController extends Controller
             if ( !file_exists($uploadfolder) ) {
                 $oldmask = umask(0);  // helpful when used in linux server
                 mkdir ($uploadfolder, 0777);
-            }else{
-                chmod($uploadfolder, 0777);
             }
 
             if ( !file_exists($destinationPath) ) {
                 $oldmask = umask(0);  // helpful when used in linux server
                 mkdir ($destinationPath, 0777);
-            }else{
-                chmod($destinationPath, 0777);
             }
 
 
@@ -754,15 +748,11 @@ class UserController extends Controller
             if ( !file_exists($uploadfolder) ) {
                 $oldmask = umask(0);  // helpful when used in linux server
                 mkdir ($uploadfolder, 0777);
-            }else{
-                chmod($uploadfolder, 0777);
             }
 
             if ( !file_exists($destinationPath) ) {
                 $oldmask = umask(0);  // helpful when used in linux server
                 mkdir ($destinationPath, 0777);
-            }else{
-                chmod($destinationPath, 0777);
             }
 
             $file_name = UserController::image_upload($image,$file_type_required,$destinationPath);
@@ -812,8 +802,6 @@ class UserController extends Controller
                 if ( !file_exists($destinationPath) ) {
                     $oldmask = umask(0);  // helpful when used in linux server
                     mkdir ($destinationPath, 0777);
-                }else{
-                    chmod($destinationPath, 0777);
                 }
 
                 $file_original_name = $image->getClientOriginalName();
@@ -868,8 +856,6 @@ class UserController extends Controller
                 if ( !file_exists($destinationPath) ) {
                     $oldmask = umask(0);  // helpful when used in linux server
                     mkdir ($destinationPath, 0777);
-                }else{
-                    chmod($destinationPath, 0777);
                 }
 
                 $file_original_name = $image->getClientOriginalName();
