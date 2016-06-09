@@ -12,10 +12,8 @@ class LogFileHelper
     //log file create for user_module
     private static function log_file($label_name = null,$file_name = 'user_log'){
         $log = new Monolog\Logger($label_name);
-<<<<<<< HEAD
+
         //$log->pushHandler(new Monolog\Handler\StreamHandler(app_path().'/modules/user/logs/'.$file_name.'-'.date('Y-m-d').'.log'),0777);
-=======
->>>>>>> c4edabcca9ed05364cf056737300646148ecfed3
         $log->pushHandler(new Monolog\Handler\StreamHandler(base_path().'/modules/admin/logs/'.$file_name.'-'.date('Y-m-d').'.log'),0777);
         return $log;
     }
