@@ -76,6 +76,14 @@ class User extends Model implements AuthenticatableContract,
         return $this->belongsToMany('App\Role');
     }
 
+    public static function getRole($user_id){
+        $role=User::join('role_user','user.id','=','role_user.user_id')
+            ->join('role','role_user.role_id','=','role.id')
+            ->where('user.id',$user_id)
+            ->select('role.id','role.slug')
+            ->get();
+        return $role;
+    }
     public function relDepartment(){
         return $this->belongsTo('App\Department', 'department_id', 'id');
     }

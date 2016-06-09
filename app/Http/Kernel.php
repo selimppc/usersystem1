@@ -28,6 +28,7 @@ class Kernel extends HttpKernel
     protected $routeMiddleware = [
 
         'acl_access' =>\App\Http\Middleware\CheckPermission::class,
+        'super_admin_access' =>\App\Http\Middleware\SuperAdminAccess::class,
 
         
         'auth' => \App\Http\Middleware\Authenticate::class,
