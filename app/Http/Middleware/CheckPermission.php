@@ -17,7 +17,6 @@ class CheckPermission
     public function handle($request, Closure $next, $permission = null)
     {
         If(!App('Illuminate\Contracts\Auth\Guard')->guest()){
-
             If($request->user()->can_access($permission)){
                 return $next($request);
             }else{
@@ -30,7 +29,7 @@ class CheckPermission
                         'description' => 'You are not authorized to access this resource.'
                     ]
                 ], 401);*/
-                return response(view('user::layouts.user_access')->render());
+                return response(view('admin::layouts.user_access')->render());
             }
         }
         //return redirect()->route('dashboard');
