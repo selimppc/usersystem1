@@ -3,6 +3,7 @@
     <div class="row">
         <div class="col-sm-12">
             {!! Form::label('role_id', 'Role :', ['class' => 'control-label']) !!}
+            <small class="required">(Required)</small>
             @if(count($role_id)>0)
                 {!! Form::select('role_id', $role_id,Input::old('role_id'),['class' => 'form-control','required','title'=>'select  role']) !!}
             @else

@@ -4,11 +4,13 @@
     <div class="row">
         <div class="col-sm-6">
             {!! Form::label('first_name', 'First Name:', ['class' => 'control-label']) !!}
+            <small class="required">(Required)</small>
             {!! Form::text('first_name', Input::old('first_name'), ['id'=>'first_name', 'class' => 'form-control', 'required'=>'required','title'=>'Enter Your First Name']) !!}
         </div>
 
         <div class="col-sm-6">
             {!! Form::label('last_name', 'Last Name:', ['class' => 'control-label']) !!}
+            <small class="required">(Required)</small>
             {!! Form::text('last_name', Input::old('last_name'), ['id'=>'last_name', 'class' => 'form-control','required'=>'required','title'=>'Enter Your Last Name']) !!}
         </div>
     </div>
@@ -19,10 +21,12 @@
     <div class="row">
         <div class="col-sm-6">
             {!! Form::label('telephone_number', 'Telephone Number:', ['class' => 'control-label']) !!}
+            <small class="required">(Required)</small>
             {!! Form::text('telephone_number', Input::old('telephone_number'), ['class' => 'form-control','required'=>'required','title'=>'Enter Telephone Number']) !!}
         </div>
         <div class="col-sm-6">
             {!! Form::label('date_of_birth', 'Date Of Birth:', ['class' => 'control-label']) !!}
+            <small class="required">(Required)</small>
             <div class="">
                 {!! Form::text('date_of_birth', Input::old('date_of_birth'), ['class' => 'form-control datapicker2','required','title'=>'select birth date']) !!}
                 {{--<span class="input-group-addon"></span>--}}
@@ -35,6 +39,7 @@
     <div class="row">
         <div class="col-sm-12">
             {!! Form::label('address', ' Address:', ['class' => 'control-label']) !!}
+            <small class="required">(Required)</small>
                 {!! Form::textarea('address', Input::old('address'), ['id'=>'address', 'class' => 'form-control','size' => '12x3','title'=>'enter address of user','required']) !!}
         </div>
     </div>
